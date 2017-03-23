@@ -94,7 +94,7 @@ $body.='</h2>';
 $body.='<div class="well" style="height:200px;width:750px;">';
 if(isset($rst[0]['next'])!=0){
   $body.='<div style="float:left;">';
-  $body.='<div id="exp" style="display:inline-block;margin:0 0 0 10px;"></div>';
+  $body.='<div id="exp" style="display:inline-block;margin:0 0 0 30px;"></div>';
   $body.='<div id="toggle" class="toggle-iphone">';
   $body.='<div class="toggle toggle-select" data-type="select" data-toggle-on=';
   if($next=="true"){
