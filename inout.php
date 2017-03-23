@@ -49,7 +49,7 @@ $body.='<div class="collapse navbar-collapse" id="nav-menu-1">';
 
 //左側
 $body.='<ul class="nav navbar-nav">';
-$body.='<li id="listrun" class="bankmenu"><a tabindex="-1">コーヒー</a></li>';
+$body.='<li id="listrun" class="bankmenu"><a tabindex="-1">珈琲会員サイト</a></li>';
 $body.='<li id="list" class="applymenu"><a href="index.php" tabindex="-1">履歴</a></li>';
 $body.='<li id="list" class="active applymenu"><a href="#" tabindex="-1">入会・退会</a></li>';
 $body.='</ul>';
@@ -137,4 +137,4 @@ $header.='<!--
 $header.='</style>';
 
 //HTML作成===========================================
-echo html('コーヒー会員入会・退会',$header, $body);
+echo html('珈琲会員入会・退会',$header, $body);
