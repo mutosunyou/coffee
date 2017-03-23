@@ -88,14 +88,18 @@ $body.='</h2>';
 
 $sql='select userID from member';
 $rst_now=selectData(DB_NAME,$sql);
-$sql='select id from employee where id not in (';
-for($i=0;$i<count($rst_now);$i++){
-  $sql.=$rst_now[$i]['userID'];
-  if($i!=(count($rst_now)-1)){
-    $sql.=',';
+$sql='select id from employee where';
+if($rst_now!=null){
+  $sql.=' id not in (';
+  for($i=0;$i<count($rst_now);$i++){
+    $sql.=$rst_now[$i]['userID'];
+    if($i!=(count($rst_now)-1)){
+      $sql.=',';
+    }
   }
+  $sql.=') and ';
 }
-$sql.=') and kairan=1';
+$sql.=' kairan=1';
 $rst=selectData('master',$sql);
 
 $body.='<p>　　入会、退会を希望される方は<a href="mailto:muto@sunyou.co.jp">企画室</a>までご連絡ください。</p><hr>';
