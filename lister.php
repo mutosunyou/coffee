@@ -2,13 +2,8 @@
 session_start();
 require_once('master/prefix.php');
 
-//ローカルのみ========================
-$_SESSION['loginid']=10042;
-$_SESSION['login_name']="武藤　一徳";
-//====================================
-
 //回覧メンバーに選ばれている回覧IDを検索する
-$sql='select * from member where available=1';
+$sql='select * from member where available=1 order by userID asc';
 $rst=selectData(DB_NAME,$sql);
 $pname = array('会員名'=>'title','確認ボタン'=>'checker',date('n月')=>'status',date('n月',strtotime(date('Y-m-d').'-1 month'))=>'onepre',date('n月',strtotime(date('Y-m-d').'-2 month'))=>'twopre');
 
@@ -21,9 +16,9 @@ $body .= '<th colspan="3">支払済日</th>';
 $body .= '</tr>';
 $body .= '<tr>';
 
-$body .= '<th>'.date('n月').'</th>';
-$body .= '<th>'.date('n月',strtotime(date('Y-m-d').'-1 month')).'</th>';
-$body .= '<th>'.date('n月',strtotime(date('Y-m-d').'-2 month')).'</th>';
+$body .= '<th style="width:120px;">'.date('n月').'</th>';
+$body .= '<th style="width:120px;">'.date('n月',strtotime(date('Y-m-d').'-1 month')).'</th>';
+$body .= '<th style="width:120px;">'.date('n月',strtotime(date('Y-m-d').'-2 month')).'</th>';
 $body .= '</tr>';
 
 for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て

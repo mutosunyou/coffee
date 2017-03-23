@@ -3,11 +3,6 @@
 session_start();
 require_once('master/prefix.php');
 
-//ローカルのみ========================
-$_SESSION['loginid']=10042;
-$_SESSION['login_name']="武藤　一徳";
-//====================================
-
 //ログイン処理======================================
 $sql = "SELECT * FROM employee";
 $rst = selectData('master',$sql);
