@@ -108,7 +108,7 @@ if(isset($rst[0]['next'])!=0){
 }
 $body.='<ul class="list-group" style="float:left;margin:0 0 0 30px;">';
 $body.='<li class="list-group-item">珈琲サーバー利用料：１０００円／月</li>';
-$body.='<li class="list-group-item">利用の有無は前月中に選択。'.date('n',strtotime(n+1)).'月1日の0時に確定。同時に集金係も決定。</li>';
+$body.='<li class="list-group-item">利用の有無は前月中に選択。確定は'.date('n',strtotime('+1 day')).'月1日。同時に集金係も決定。</li>';
 $body.='<li class="list-group-item">'.date('n').'月の集金係：<font color="blue">'.nameFromUserID($rst_vote[0]['userID']).'</font>さん</li>';
 $body.='</ul>';
 
