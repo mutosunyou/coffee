@@ -23,6 +23,11 @@ $(function() {
     explain(active);
   });
 
+$('#lister').on('click','.paycancel',function(e){
+console.log($(e.target).attr('user'));
+
+});
+
   $('#withdrawal').click(function(){
     console.log($('#outer>option:selected').val());
     $.post(

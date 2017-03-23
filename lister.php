@@ -34,7 +34,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
     if($rst_check[0]['paydate']==null){
       $body .= '<button name="'.$rst[$i]['userID'].'" class="havepay btn btn-success btn-xs">支払済</button>';
     }else{
-      $body .= '<button name="'.$rst_check[0]['id'].'" class="paycancel btn btn-default btn-xs">キャンセル</button>';
+      $body .= '<button name="'.$rst_check[0]['id'].'" user="'.$rst_check[0]['userID'].'" class="paycancel btn btn-default btn-xs">キャンセル</button>';
     }
   }
   $body .= '</td>';

@@ -83,7 +83,7 @@ $rst_vote=selectData(DB_NAME,$sql);
 $body.='<input id="userID" class="hidden" value="'.$_SESSION['loginid'].'">';
 $body.='<input id="ava" class="hidden" value='.$next.'>';
 
-//本文/////////////////////////////////////////////
+//本文
 //タイトル=========================================
 $body.='<div class="container-fluid">';
 $body.='<div class="container">';
@@ -94,7 +94,6 @@ $body.='</h2>';
 $body.='<div class="well" style="height:200px;width:750px;">';
 if(isset($rst[0]['next'])!=0){
   $body.='<div id="exp" style="float:left;display:inline-block;margin:0 0 0 10px;"></div>';
-
   $body.='<div id="toggle" class="toggle-iphone" style="float:left;">';
   $body.='<div class="toggle toggle-select" data-type="select" data-toggle-on=';
   if($next=="true"){
@@ -108,7 +107,7 @@ if(isset($rst[0]['next'])!=0){
 $body.='<ul class="list-group" style="float:left;margin:0 0 0 30px;">';
 $body.='<li class="list-group-item">コーヒーサーバー利用料：１０００円／月</li>';
 $body.='<li class="list-group-item">利用の有無は前月中に選択。1日の9時に決定。</li>';
-$body.='<li class="list-group-item">集金係は1日に抽選で選ぶ<今月は<font color="blue">'.nameFromUserID($rst_vote[0]['userID']).'</font>さんです></li>';
+$body.='<li class="list-group-item">集金係は1日に抽選で決定。　今月の集金係：<font color="blue">'.nameFromUserID($rst_vote[0]['userID']).'</font>さん</li>';
 $body.='</ul>';
 
 $body.='</div>';
@@ -133,4 +132,4 @@ $header.='<!--
 $header.='</style>';
 
 //HTML作成===========================================
-echo html('コーヒー会員情報',$header, $body);
+echo html('珈琲会員',$header, $body);

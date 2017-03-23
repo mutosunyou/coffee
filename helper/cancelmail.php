@@ -2,16 +2,7 @@
 //初期==============================================
 require_once('../master/prefix.php');
 
-$sql='select * from member';
-$rst=selectData(DB_NAME,$sql);
-
-$to='';
-for($i=0;$i<count($rst);$i++){
-  $to .= mailFromUserID($rst[$i]['userID']);
-  if($i!=(count($rst)-1)){
-    $to.=', ';
-  }
-}
+$to=mailFromUserID($_POST['userID']);
 
 $subject = '【珈琲会員の皆様へ】';
 
