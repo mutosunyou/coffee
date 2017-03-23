@@ -23,10 +23,7 @@ $(function() {
     explain(active);
   });
 
-$('#lister').on('click','.paycancel',function(e){
-console.log($(e.target).attr('user'));
 
-});
 
   $('#withdrawal').click(function(){
     console.log($('#outer>option:selected').val());
@@ -72,17 +69,37 @@ console.log($(e.target).attr('user'));
 
   $('#lister').on('click','.paycancel',function(ev){
     console.log($(ev.target).attr('name'));
-    $.post(
-      "helper/paycancel.php",
-      {
-        "id":$(ev.target).attr('name')
-      },
-      function(dat){
-        console.log(dat);
-        location.reload();
-      }
-    ); 
+    console.log($(ev.target).attr('user'));
+    if(!confirm('キャンセルの場合、会員に確認メールを送信します。キャンセルしますか？')){
+      return false;
+    }else{
+      $.post(
+        "helper/cancelmail.php",
+        {
+          "userID":$(ev.target).attr('user')
+        },
+        function(dat){
+          console.log(dat);
+        }
+      ); 
+      $.post(
+        "helper/paycancel.php",
+        {
+          "id":$(ev.target).attr('name')
+        },
+        function(dat){
+          console.log(dat);
+          location.reload();
+        }
+      ); 
+    }
   });
+
+
+
+
+
+
 
   function reloadTable(){
     $.post(
