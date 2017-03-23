@@ -8,8 +8,8 @@ $(function() {
     drag:true,
     height:30,
     text:{
-      on:'on',
-      off:'off'
+      on:'利用する',
+      off:'利用しない'
     }
   });
 
@@ -95,12 +95,6 @@ $(function() {
     }
   });
 
-
-
-
-
-
-
   function reloadTable(){
     $.post(
       "lister.php",{
@@ -131,11 +125,8 @@ $(function() {
   }
 
   function explain(a){
-    if(a==true){
-      $('#exp').html('<h4 style="display:inline;float:left;">来月利用する</h4>');
-    }else{
-      $('#exp').html('<h4 style="display:inline;float:left;">来月利用しない</h4>');
-    }
+      $('#exp').html('<h4 style="display:inline;float:left;">来月利用する?</h4>');
+    
   }
 });
 

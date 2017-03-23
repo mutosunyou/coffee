@@ -49,7 +49,7 @@ $body.='<div class="collapse navbar-collapse" id="nav-menu-1">';
 
 //左側
 $body.='<ul class="nav navbar-nav">';
-$body.='<li id="listrun" class="bankmenu"><a tabindex="-1">コーヒー</a></li>';
+$body.='<li id="listrun" class="bankmenu"><a tabindex="-1">珈琲会員サイト</a></li>';
 $body.='<li id="list" class="active applymenu"><a href="#" tabindex="-1">履歴</a></li>';
 $body.='<li id="list" class="applymenu"><a href="inout.php" tabindex="-1">入会・退会</a></li>';
 $body.='</ul>';
@@ -88,7 +88,7 @@ $body.='<input id="ava" class="hidden" value='.$next.'>';
 $body.='<div class="container-fluid">';
 $body.='<div class="container">';
 $body.='<h2 class="toptitle">';
-$body.='コーヒー会員';
+$body.='珈琲会員';
 $body.='</h2>';
 //トグル
 $body.='<div class="well" style="height:200px;width:750px;">';
@@ -105,9 +105,9 @@ if(isset($rst[0]['next'])!=0){
   $body.='</div>';
 }
 $body.='<ul class="list-group" style="float:left;margin:0 0 0 30px;">';
-$body.='<li class="list-group-item">コーヒーサーバー利用料：１０００円／月</li>';
-$body.='<li class="list-group-item">利用の有無は前月中に選択。1日の9時に決定。</li>';
-$body.='<li class="list-group-item">集金係は1日に抽選で決定。　今月の集金係：<font color="blue">'.nameFromUserID($rst_vote[0]['userID']).'</font>さん</li>';
+$body.='<li class="list-group-item">珈琲サーバー利用料：１０００円／月</li>';
+$body.='<li class="list-group-item">利用の有無は前月中に選択。1日の0時に確定。</li>';
+$body.='<li class="list-group-item">集金係は1日に抽選で決定。　'.date('n').'月の集金係：<font color="blue">'.nameFromUserID($rst_vote[0]['userID']).'</font>さん</li>';
 $body.='</ul>';
 
 $body.='</div>';
