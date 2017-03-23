@@ -102,7 +102,7 @@ if(isset($rst[0]['next'])!=0){
   }else{
     $body.='"false"';
   }
-  $body.='style="margin-left:50px;width:150px;display:inline-block;"></div>';
+  $body.='style="margin-left:30px;width:150px;display:inline-block;"></div>';
   $body.='</div>';
   $body.='</div>';
 }
