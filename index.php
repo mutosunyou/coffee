@@ -94,7 +94,7 @@ $body.='</h2>';
 $body.='<div class="well" style="height:200px;width:750px;">';
 if(isset($rst[0]['next'])!=0){
   $body.='<div style="float:left;">';
-  $body.='<div id="exp" style="display:inline-block;margin:0 0 0 30px;"></div>';
+  $body.='<div id="exp" style="display:inline-block;margin:0 0 0 20px;"></div>';
   $body.='<div id="toggle" class="toggle-iphone">';
   $body.='<div class="toggle toggle-select" data-type="select" data-toggle-on=';
   if($next=="true"){
@@ -102,7 +102,7 @@ if(isset($rst[0]['next'])!=0){
   }else{
     $body.='"false"';
   }
-  $body.='style="width:100px;display:inline-block;"></div>';
+  $body.='style="margin-left:50px;width:150px;display:inline-block;"></div>';
   $body.='</div>';
   $body.='</div>';
 }
