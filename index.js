@@ -4,7 +4,7 @@ $(function() {
   reloadTable();
    
   $('.toggle').toggles({
-    click:false,
+    click:true,
     drag:true,
     height:30,
     text:{
