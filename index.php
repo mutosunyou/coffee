@@ -124,7 +124,7 @@ $body.='</div>';//container
 $body.='</div>';//
 
 //ヘッダー===========================================
-$header ='<script type="text/javascript" src="index.js?=id='.date('Y-m-d H:i:s).'"></script>';
+$header ='<script type="text/javascript" src="index.js?id='.date('Y-m-d H:i:s').'"></script>';
 $header.='<style type="text/css">';
 $header.='<!--
   .input-group{
