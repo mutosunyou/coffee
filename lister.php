@@ -82,7 +82,7 @@ $sql='select * from member where available=0 order by userID asc';
 $rst=selectData(DB_NAME,$sql);
 for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '<tr>';
-  $body .= '<td style="width:150px;nowrap;">'.nameFromUserID($rst[$i]['userID']).'</td>';
+  $body .= '<td style="width:150px;nowrap;color:silver;">'.nameFromUserID($rst[$i]['userID']).'</td>';
   $body .= '<td style="width:100px;nowrap;">';
   $sql='select * from checked where paydate >= "'.date('Y-m-').'01" and paydate <= "'.date('Y-m-').'31" and userID='.$rst[$i]['userID'];
   $rst_check=selectData(DB_NAME,$sql);  
