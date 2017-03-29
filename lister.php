@@ -62,6 +62,43 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '</td>';
   $body .= '</tr>';
 }
+
+$sql='select * from member where available=0 order by userID asc';
+$rst=selectData(DB_NAME,$sql);
+for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
+  $body .= '<tr>';
+  $body .= '<td style="width:150px;nowrap;">'.nameFromUserID($rst[$i]['userID']).'</td>';
+  $body .= '<td style="width:100px;nowrap;">';
+
+
+  $body .= '</td>';
+
+  $body .= '<td style="width:120px;nowrap;">';
+  if($rst_check!=null){
+    $body .= substr($rst_check[0]['paydate'],-2).'日(済)';
+  }
+  $body .= '</td>';
+
+  $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-1').'-1 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-1').'-1 month')).'31" and userID='.$rst[$i]['userID'];
+  $rst2=selectData(DB_NAME,$sql);
+  $body .= '<td>';
+  if($rst2!=null){
+    $body .= substr($rst2[0]['paydate'],-2).'日(済)';
+  }
+  $body .= '</td>';
+
+  $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'31" and userID='.$rst[$i]['userID'];
+  $rst1=selectData(DB_NAME,$sql);
+  $body .= '<td>';
+  if($rst1!=null){
+    $body .= substr($rst1[0]['paydate'],-2).'日(済)';
+  }
+  $body .= '</td>';
+  $body .= '</tr>';
+}
+
+
+
 $body .= '</table>';
 
 echo $body;
