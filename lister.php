@@ -59,7 +59,10 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
 
   if($rst2!=null){
     $body .= substr($rst2[0]['paydate'],-2).'日(済)';
+  }else{
+    $body .= 'ー';
   }
+
 
   $body .= '</td>';
 
@@ -68,7 +71,10 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '<td>';
   if($rst1!=null){
     $body .= substr($rst1[0]['paydate'],-2).'日(済)';
+  }else{
+    $body .= 'ー';
   }
+
   $body .= '</td>';
   $body .= '</tr>';
 }
@@ -87,6 +93,8 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '<td style="width:120px;nowrap;">';
   if($rst_check!=null){
     $body .= substr($rst_check[0]['paydate'],-2).'日(済)';
+  }else{
+    $body .= 'ー';
   }
   $body .= '</td>';
 
@@ -95,7 +103,10 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '<td>';
   if($rst2!=null){
     $body .= substr($rst2[0]['paydate'],-2).'日(済)';
+  }else{
+    $body .= 'ー';
   }
+
   $body .= '</td>';
 
   $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'31" and userID='.$rst[$i]['userID'];
@@ -103,7 +114,10 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '<td>';
   if($rst1!=null){
     $body .= substr($rst1[0]['paydate'],-2).'日(済)';
+  }else{
+    $body .= 'ー';
   }
+
   $body .= '</td>';
   $body .= '</tr>';
 }
