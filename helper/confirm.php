@@ -20,6 +20,10 @@ $message.= '利用しない方は「利用しない」にしてください。'.
 $message.= 'http://192.168.100.209/coffee/index.php'.PHP_EOL.PHP_EOL;
 $message.= '来月1日0時の時点で利用者は確定されます。'.PHP_EOL.PHP_EOL;
 
+$message.= '珈琲サーバーを使用しない方にも配信しています。'.PHP_EOL;
+$message.= '※本メールの配信を希望されない方は下記アドレスまで連絡ください。'.PHP_EOL;
+$message.= 'muto@sunyou.co.jp';
+
 $headers = 'remote_manager@sunyou.co.jp';
 
 sendmail($to,'',str_replace('\'','’',$subject),str_replace('\'','’',$message),$headers);
