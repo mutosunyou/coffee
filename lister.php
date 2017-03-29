@@ -17,8 +17,8 @@ $body .= '</tr>';
 $body .= '<tr>';
 
 $body .= '<th style="width:120px;">'.date('n月').'</th>';
-$body .= '<th style="width:120px;">'.date('n月',strtotime(date('Y-m-d').'-1 month')).'</th>';
-$body .= '<th style="width:120px;">'.date('n月',strtotime(date('Y-m-d').'-2 month')).'</th>';
+$body .= '<th style="width:120px;">'.date('n月',strtotime(date('Y-m-1').'-1 month')).'</th>';
+$body .= '<th style="width:120px;">'.date('n月',strtotime(date('Y-m-1').'-2 month')).'</th>';
 $body .= '</tr>';
 
 for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
@@ -45,7 +45,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   }
   $body .= '</td>';
 
-  $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-d').'-1 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-d').'-1 month')).'31" and userID='.$rst[$i]['userID'];
+  $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-1').'-1 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-1').'-1 month')).'31" and userID='.$rst[$i]['userID'];
   $rst2=selectData(DB_NAME,$sql);
   $body .= '<td>';
   if($rst2!=null){
@@ -53,7 +53,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   }
   $body .= '</td>';
 
-  $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-d').'-2 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-d').'-2 month')).'31" and userID='.$rst[$i]['userID'];
+  $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'31" and userID='.$rst[$i]['userID'];
   $rst1=selectData(DB_NAME,$sql);
   $body .= '<td>';
   if($rst1!=null){

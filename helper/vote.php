@@ -17,7 +17,7 @@ $sql = 'update member set voted=0';
 deleteFrom(DB_NAME,$sql);
 
 //availableの中から集計係を選ぶ
-$sql = 'select userID from member where userID not in ('.$rst_jogai[0]['userID'].') and available=1';
+$sql = 'select userID from member where userID not in ('.$rst_jogai[0]['userID'].',1,11,10001) and available=1';
 $rst = selectData(DB_NAME,$sql);
 
 $sql = 'update member set voted=1 where userID='.$rst[rand(0,(count($rst)-1))]['userID'];
