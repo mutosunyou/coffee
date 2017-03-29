@@ -62,7 +62,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '</td>';
   $body .= '</tr>';
 }
-
+/*
 $sql='select * from member where available=0 order by userID asc';
 $rst=selectData(DB_NAME,$sql);
 for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
@@ -96,7 +96,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '</td>';
   $body .= '</tr>';
 }
-
+ */
 
 
 $body .= '</table>';
