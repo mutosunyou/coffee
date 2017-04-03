@@ -83,14 +83,14 @@ $rst=selectData(DB_NAME,$sql);
 for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '<tr>';
   $body .= '<td style="width:150px;nowrap;color:silver;">'.nameFromUserID($rst[$i]['userID']).'</td>';
-  $body .= '<td style="width:100px;nowrap;">';
+  $body .= '<td style="width:100px;nowrap;color:silver;">';
   $sql='select * from checked where paydate >= "'.date('Y-m-').'01" and paydate <= "'.date('Y-m-').'31" and userID='.$rst[$i]['userID'];
   $rst_check=selectData(DB_NAME,$sql);  
 
     $body.='利用なし';
   $body .= '</td>';
 
-  $body .= '<td style="width:120px;nowrap;">';
+  $body .= '<td style="width:120px;nowrap;color:silver;">';
   if($rst_check!=null){
     $body .= substr($rst_check[0]['paydate'],-2).'日(済)';
   }else{
@@ -100,7 +100,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
 
   $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-1').'-1 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-1').'-1 month')).'31" and userID='.$rst[$i]['userID'];
   $rst2=selectData(DB_NAME,$sql);
-  $body .= '<td>';
+  $body .= '<td style="width:120px;nowrap;color:silver;">';
   if($rst2!=null){
     $body .= substr($rst2[0]['paydate'],-2).'日(済)';
   }else{
@@ -111,7 +111,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
 
   $sql='select * from checked where paydate >= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'01" and paydate <= "'.date('Y-m-',strtotime(date('Y-m-1').'-2 month')).'31" and userID='.$rst[$i]['userID'];
   $rst1=selectData(DB_NAME,$sql);
-  $body .= '<td>';
+  $body .= '<td style="width:120px;nowrap;color:silver;">';
   if($rst1!=null){
     $body .= substr($rst1[0]['paydate'],-2).'日(済)';
   }else{
