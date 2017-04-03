@@ -42,7 +42,7 @@ for($i=0;$i<count($rst);$i++){//指定されたuserIDのデータ全て
   $body .= '<td style="width:120px;nowrap;">';
   if($rst_vote[0]['voted']==1){
     if($rst_check[0]['paydate']==null){
-      $body .= '<button name="'.$rst[$i]['userID'].'" class="havepay btn btn-success btn-xs">支払済</button>';
+      $body .= '<button name="'.$rst[$i]['userID'].'" class="havepay btn btn-success btn-xs">受領</button>';
     }else{
       $body .= '<button name="'.$rst_check[0]['id'].'" user="'.$rst_check[0]['userID'].'" class="paycancel btn btn-default btn-xs">キャンセル</button>';
     }
