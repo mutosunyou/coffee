@@ -42,7 +42,7 @@ $rst_voted=selectData(DB_NAME,$sql_voted);
 $subject = '【珈琲会員の皆様へ】'.PHP_EOL.PHP_EOL;
 
 $message.= '今月珈琲サーバーを利用される方にメールを配信しています。'.PHP_EOL;
-$message.= '今月の集金係は'.nameFromUserID($rst_voted[0]['userID']).'です。集金係へ早めの支払をお願いします。'.PHP_EOL.PHP_EOL;
+$message.= '今月の集金係は'.nameFromUserID($rst_voted[0]['userID']).'さんです。集金係へ早めの支払をお願いします。'.PHP_EOL.PHP_EOL;
 
 $message.= 'また、集金係はお金を受け取ったら下記システムに支払済の方のチェックをお願いします。'.PHP_EOL;
 $message.= 'http://192.168.100.209/coffee/index.php'.PHP_EOL.PHP_EOL;
