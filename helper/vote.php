@@ -29,14 +29,17 @@ $sql_next = 'select userID from member where next=1';
 $rst_next = selectData(DB_NAME,$sql_next);
 $to='';
 for($i=0;$i<count($rst_next);$i++){
-  $to[] = mailFromUserID($rst_next[$i]['userID']);
+  $to .= mailFromUserID($rst_next[$i]['userID']);
+  if($i!=(count($rst_next)-1)){
+    $to.=', ';
+  }
 }
 $sql_voted='select * from member where voted=1';
 $rst_voted=selectData(DB_NAME,$sql_voted);
 
 //メール文面
-$subject = '【珈琲会員の皆様へ】'.PHP_EOL.PHP_EOL;
-$message='＊＊＊本メールはテストメールなので無視してください＊＊＊'.PHP_EOL.PHP_EOL;
+$subject = '【珈琲会員の皆様へ】(再送)'.PHP_EOL.PHP_EOL;
+$message='*未配信の方がいたので再送しております。重複される方は本メールを無視してください。'.PHP_EOL.PHO_EOL;
 $message.= '今月珈琲サーバーを利用される方にメールを配信しています。'.PHP_EOL;
 $message.= '今月の集金係は'.nameFromUserID($rst_voted[0]['userID']).'さんです。集金係へ早めの支払をお願いします。'.PHP_EOL.PHP_EOL;
 
@@ -47,3 +50,4 @@ $headers = 'remote_manager@sunyou.co.jp';
 
 sendmail($to,'',str_replace('\'','’',$subject),str_replace('\'','’',$message),$headers);
 
+echo $to;
