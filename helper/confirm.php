@@ -22,7 +22,7 @@ $message.= '来月1日0時の時点で利用者は確定されます。'.PHP_EOL
 
 $message.= '珈琲サーバーを使用しない方にも配信しています。'.PHP_EOL;
 $message.= '※本メールの配信を希望されない方は下記アドレスまで連絡ください。'.PHP_EOL;
-$message.= 'muto@sunyou.co.jp';
+$message.= 'hara@sunyou.co.jp';
 
 $headers = 'remote_manager@sunyou.co.jp';
 

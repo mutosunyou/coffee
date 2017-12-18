@@ -101,7 +101,7 @@ if($rst_now!=null){
 $sql.=' kairan=1';
 $rst=selectData('master',$sql);
 
-$body.='<p>　　入会、退会を希望される方は<a href="mailto:muto@sunyou.co.jp">企画室</a>までご連絡ください。</p><hr>';
+$body.='<p>　　入会、退会を希望される方は<a href="mailto:hara@sunyou.co.jp">企画室</a>までご連絡ください。</p><hr>';
 
 if($author==1){
   $body.='<div class="clearfix"></div>';
